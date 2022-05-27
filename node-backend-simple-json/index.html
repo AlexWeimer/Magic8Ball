@@ -3,15 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Hello, world! (index.html)</h1>
-    <input id="userName" type="text" name="" placeholder="Enter Name">
+    <H1 class="Title">Magic 8 Ball</H1>
+    <!-- <h1>Hello, world! (index.html)</h1>
+    <input id="userName" type="text" name="" placeholder="Ask Question">
     <button id="clickMe" type="button" name="button">Click Me</button>
     <h2 id="personName"></h2>
     <h2 id="personStatus"></h2>
     <h2 id="personOccupation"></h2>
-    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script> -->
+    <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="eight"></span>
+      </figure>
+    </section>
+
+    <div class="answer">
+      <p id="answer" class="Title">Answer Here</p>
+    </div>
+
+
+    <input id="question" type="text" placeholder="Ask Question">
+    <button id="clickMe" tpye="button" name="button">Ask</button>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
