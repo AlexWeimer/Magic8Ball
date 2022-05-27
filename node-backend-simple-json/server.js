@@ -15,42 +15,42 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/otherpage') {
-    fs.readFile('otherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
-  else if (page == '/otherotherpage') {
-    fs.readFile('otherotherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
   else if (page == '/api') {
-    if('student' in params){
-      if(params['student']== 'leon'){
+    if('question' in params){
+      if(params['question'] == 'entered'){
         res.writeHead(200, {'Content-Type': 'application/json'});
+        
+        //array of 20 possible answers
+        function getAnswer(){
+          const answer = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.",
+          "Don't count on it.", "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.",
+          "Outlook not so good.", "Outlook good.", "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.",
+          "Yes.", "Yes - definitely.", "You may rely on it."];
+        
+          //const random = Math.floor((Math.random() * 20) + 1)
+          //if we add more answers
+          const random = Math.floor((Math.random() * answer.length))
+          
+          answerReply = answer[random]
+          console.log(answerReply)
+        }
+
+        getAnswer()
+
         const objToJson = {
-          name: "leon",
-          status: "Boss Man",
-          currentOccupation: "Baller"
+         answer: answerReply
         }
         res.end(JSON.stringify(objToJson));
-      }//student = leon
-      else if(params['student'] != 'leon'){
+      }//question = false
+      else if(params['question'] != 'true'){
         res.writeHead(200, {'Content-Type': 'application/json'});
         const objToJson = {
-          name: "unknown",
-          status: "unknown",
-          currentOccupation: "unknown"
+          answer: "unknown"
         }
         res.end(JSON.stringify(objToJson));
-      }//student != leon
-    }//student if
-  }//else if
+      }
+    }
+  }
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);
@@ -75,4 +75,12 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000);
+server.listen(5500);
+
+
+
+// // 👇️ Store a JSON value in local storage
+// localStorage.setItem('person', JSON.stringify({name: 'Tom'}));
+
+// // 👇️ parse the value when accessing it
+// const result = JSON.parse(localStorage.getItem('person'));
