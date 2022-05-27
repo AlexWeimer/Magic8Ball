@@ -11,3 +11,8 @@ async function makeReq(){
   document.querySelector("#personStatus").textContent = data.status
   document.querySelector("#personOccupation").textContent = data.currentOccupation
 }
+
+//Make list of "answers"
+//Generate random number
+//Select answer from list
+//print to dom (h2)
