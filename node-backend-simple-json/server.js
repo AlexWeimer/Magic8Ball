@@ -77,8 +77,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(5500);
 
-
-
 // // 👇️ Store a JSON value in local storage
 // localStorage.setItem('person', JSON.stringify({name: 'Tom'}));
 
