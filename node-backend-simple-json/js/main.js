@@ -31,6 +31,7 @@ function getAnswer(){
   "Outlook not so good.", "Outlook good.", "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.",
   "Yes.", "Yes - definitely.", "You may rely on it."];
 
+ main
   //const random = Math.floor((Math.random() * 20) + 1)
   //if we add more answers
   const random = Math.floor((Math.random() * answer.length))
